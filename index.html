@@ -1,14 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido a Wilkinsburg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+
+<body id="comienzo">
+    <header>
+        <a href="/">¡Hola Wilkinsburg!</a>
+    </header>
     <main>
-        <h1>Bienvenido a Wilkinsburg</h1>
-        <img src="hola.jpg" alt="">
+        <section class="rojo">
+            <h1>¡Bienvenido a Wilkinsburg!</h1>
+            <div class="texto">
+                <img src="hola.jpg" alt="" style="width:100%;">
+            </div>
+        </section>
+        <section id="#gobierno" class="verde">
+            <h2>Oficinas del gobierno</h2>
+            <div class="texto">
+                <p>♥️ - Recursos en español</p>
+                <dl>
+                    <dt><e-ingles en="Borough of Wilkinsburg">Municipio de Wilkinsburg</e-ingles></dt>
+                    <dd>
+                        <a href="https://www.wilkinsburgpa.gov/">https://www.wilkinsburgpa.gov</a>
+                        <a href="tel:1+412-244-2900">(412) 244-2900</a>
+                        <address>
+                            605 Ross Avenue<br />
+                            Wilkinsburg, PA 15221
+                        </address>
+                    </dd>
+                    <dt><e-ingles en="Wilkinsburg Police Department">Departamento de policía de Wilkinsburg</e-ingles>
+                    </dt>
+                    <dd>
+                        <span>Información: <a href="tel:1+412-244-2913">(412) 244-2913</a></span>
+                        <span><b>¿Emergencia?</b>: <a href="tel:1+911">911</a></span>
+                        <address>
+                            605 Ross Avenue<br />
+                            Wilkinsburg, PA 15221
+                        </address>
+                    </dd>
+                    <dt><e-ingles en="Wilkinsburg School District">Distrito escolar de Wilkinsburg</e-ingles></dt>
+                    <dd>
+                        <a href="https://www.wilkinsburgschools.org/">https://www.wilkinsburgschools.org ♥️</a>
+                        <a href="tel:1+412-371-9667">(412) 371-9667</a>
+                        <address>
+                            718 Wallace Avenue<br />
+                            Wilkinsburg, PA 15221
+                        </address>
+                    </dd>
+                </dl>
+            </div>
+        </section>
+        <section id="#servicios" class="oro">
+            <h2>Servicios públicos</h2>
+            <div class="texto">
+                <p>♥️ - Recursos en español</p>
+                <dl>
+                    <dt>Agua: <e-ingles en="Wilkinsburg-Penn Joint Water Authority">Autoridad Conjunta del Agua de
+                            Wilkinsburg-Penn</e-ingles></dt>
+                    <dd>
+                        <a href="https://wpjwa.com/">https://wpjwa.com</a>
+                        <a href="tel:1+412-243-6200">(412) 243-6200</a>
+                        <address>
+                            2200 Robinson Boulevard<br />
+                            Pittsburgh, PA 15221
+                        </address>
+                    </dd>
+                    <dt>Electricidad: <e-ingles en="Duquesne Light Company">Duquesne Compañía de Luz</e-ingles>
+                    </dt>
+                    <dd>
+                        <a href="https://www.duquesnelight.com/">https://www.duquesnelight.com</a>
+                        <span>Información: <a href="tel:1+888-393-7100">1 (888) 393-7100</a></span>
+                        <span><b>¿Emergencia?</b>: <a href="tel:1+888-393-7000">1 (888) 393-7000</a></span>
+                    </dd>
+                    <dt>Basura y reciclaje: Municipio de Wilkinsburg</dt>
+                    <dd>
+                        <a
+                            href="https://www.wilkinsburgpa.gov/departments/department-of-public-works/refuse-collection/">
+                            https://www.wilkinsburgpa.gov/.../refuse-collection/
+                        </a>
+                    </dd>
+                </dl>
+            </div>
+        </section>
     </main>
+    <a href="#comienzo">Vuelve al comienzo</a>
+    <script>
+        customElements.define('e-ingles', class extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow({
+                    mode: 'open'
+                });
+                this.template = document.createElement('template');
+            }
+
+            connectedCallback() {
+                this.template.innerHTML = `
+                    <style>
+                        details {
+                            display: inline-block;
+                            position: relative;
+                        }
+
+                        summary {
+                            border-bottom: 1px dotted hsla(0, 0%, 0%, 0.25);
+                            cursor: help;
+                            list-style-type: none;
+                        }
+
+                        details[open] div {
+                            background: var(--tomate);
+                            color: white;
+                            left: 0;
+                            padding: 0.25ch 0.5ch;
+                            position: absolute;
+                            top: 100%;
+                        }
+                    </style>
+                    <details>
+                        <summary><slot></slot></summary>
+                        <div lang="en">${this.getAttribute("en")}</div>
+                    </details>
+                `;
+                this.shadowRoot.appendChild(this.template.content.cloneNode(true));
+            }
+        })
+    </script>
 </body>
+
 </html>
