@@ -4,27 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a Wilkinsburg</title>
+    <title>¡Hola Wilkinsburg!</title>
+    <meta name="description" content="¡Hola Wilkinsburg! es un sitio web con información para hispanicos sobre el municipio Wilkinsburg en Pittsburgh, Pennsylvania.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body id="comienzo">
-    <header>
-        <a href="/">¡Hola Wilkinsburg!</a>
-    </header>
     <main>
-        <section class="rojo">
+        <section>
             <h1>¡Bienvenido a Wilkinsburg!</h1>
-            <div class="texto">
-                <img src="hola.jpg" alt="" style="width:100%;">
-            </div>
+            <p>Wilkinsburg es un municipio en Pittsburgh, Pennsylvania con vecinos amigables, vivienda asequible y muchase iglesias.</p>
+            <p>Este sitio web fue hecho por por vecinos en Wilkinsburg.</p>
         </section>
-        <section id="#gobierno" class="verde">
+        <section id="#gobierno">
             <h2>Oficinas del gobierno</h2>
-            <div class="texto">
+            <div>
                 <p>♥️ - Recursos en español</p>
                 <dl>
                     <dt><e-ingles en="Borough of Wilkinsburg">Municipio de Wilkinsburg</e-ingles></dt>
@@ -46,9 +43,9 @@
                             Wilkinsburg, PA 15221
                         </address>
                     </dd>
-                    <dt><e-ingles en="Wilkinsburg School District">Distrito escolar de Wilkinsburg</e-ingles></dt>
+                    <dt><e-ingles en="Wilkinsburg School District">Distrito escolar de Wilkinsburg ♥️</e-ingles></dt>
                     <dd>
-                        <a href="https://www.wilkinsburgschools.org/">https://www.wilkinsburgschools.org ♥️</a>
+                        <a href="https://www.wilkinsburgschools.org/">https://www.wilkinsburgschools.org</a>
                         <a href="tel:1+412-371-9667">(412) 371-9667</a>
                         <address>
                             718 Wallace Avenue<br />
@@ -58,9 +55,9 @@
                 </dl>
             </div>
         </section>
-        <section id="#servicios" class="oro">
+        <section id="#servicios">
             <h2>Servicios públicos</h2>
-            <div class="texto">
+            <div>
                 <p>♥️ - Recursos en español</p>
                 <dl>
                     <dt>Agua: <e-ingles en="Wilkinsburg-Penn Joint Water Authority">Autoridad Conjunta del Agua de
@@ -91,46 +88,15 @@
             </div>
         </section>
     </main>
-    <a href="#comienzo">Vuelve al comienzo</a>
     <script>
         customElements.define('e-ingles', class extends HTMLElement {
-            constructor() {
-                super();
-                this.attachShadow({
-                    mode: 'open'
-                });
-                this.template = document.createElement('template');
-            }
-
             connectedCallback() {
-                this.template.innerHTML = `
-                    <style>
-                        details {
-                            display: inline-block;
-                            position: relative;
-                        }
-
-                        summary {
-                            border-bottom: 1px dotted hsla(0, 0%, 0%, 0.25);
-                            cursor: help;
-                            list-style-type: none;
-                        }
-
-                        details[open] div {
-                            background: var(--tomate);
-                            color: white;
-                            left: 0;
-                            padding: 0.25ch 0.5ch;
-                            position: absolute;
-                            top: 100%;
-                        }
-                    </style>
-                    <details>
-                        <summary><slot></slot></summary>
+                this.innerHTML = `
+                    <details e-ingles>
+                        <summary>${this.textContent}</summary>
                         <div lang="en">${this.getAttribute("en")}</div>
                     </details>
                 `;
-                this.shadowRoot.appendChild(this.template.content.cloneNode(true));
             }
         })
     </script>
