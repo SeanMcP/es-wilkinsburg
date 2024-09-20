@@ -3,42 +3,42 @@
   "short_name": "Hola WBG",
   "icons": [
     {
-      "src": "/favicon-48x48.png?v=4de420d41dbdf367209ae60f791f3731",
+      "src": "/images/favicon-48x48.png?v=294778b1bc56820fc7706102aba5ef4c",
       "sizes": "48x48",
       "type": "image/png"
     },
     {
-      "src": "/favicon-72x72.png?v=4de420d41dbdf367209ae60f791f3731",
+      "src": "/images/favicon-72x72.png?v=294778b1bc56820fc7706102aba5ef4c",
       "sizes": "72x72",
       "type": "image/png"
     },
     {
-      "src": "/favicon-96x96.png?v=4de420d41dbdf367209ae60f791f3731",
+      "src": "/images/favicon-96x96.png?v=294778b1bc56820fc7706102aba5ef4c",
       "sizes": "96x96",
       "type": "image/png"
     },
     {
-      "src": "/favicon-144x144.png?v=4de420d41dbdf367209ae60f791f3731",
+      "src": "/images/favicon-144x144.png?v=294778b1bc56820fc7706102aba5ef4c",
       "sizes": "144x144",
       "type": "image/png"
     },
     {
-      "src": "/favicon-192x192.png?v=4de420d41dbdf367209ae60f791f3731",
+      "src": "/images/favicon-192x192.png?v=294778b1bc56820fc7706102aba5ef4c",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/favicon-256x256.png?v=4de420d41dbdf367209ae60f791f3731",
+      "src": "/images/favicon-256x256.png?v=294778b1bc56820fc7706102aba5ef4c",
       "sizes": "256x256",
       "type": "image/png"
     },
     {
-      "src": "/favicon-384x384.png?v=4de420d41dbdf367209ae60f791f3731",
+      "src": "/images/favicon-384x384.png?v=294778b1bc56820fc7706102aba5ef4c",
       "sizes": "384x384",
       "type": "image/png"
     },
     {
-      "src": "/favicon-512x512.png?v=4de420d41dbdf367209ae60f791f3731",
+      "src": "/images/favicon-512x512.png?v=294778b1bc56820fc7706102aba5ef4c",
       "sizes": "512x512",
       "type": "image/png"
     }
