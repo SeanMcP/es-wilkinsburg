@@ -26,6 +26,10 @@ body {
     margin: 0;
 }
 
+img {
+    display: block;
+}
+
 a {
     color: hsl(200, 91%, 40%);
 }
@@ -88,28 +92,37 @@ footer {
     text-align: center;
 }
 
+.library-shelf {
+    width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+    .library-shelf {
+        height: 400px;
+        margin-inline: auto;
+        width: initial;
+    }
+}
+
 /* Web components */
 
 e-ingles details {
-    --_border-thickness: 1px;
     display: inline-block;
     position: relative;
 }
 
 e-ingles summary {
-    border-block-end: var(--_border-thickness) dashed var(--text-color);
     cursor: help;
     list-style-type: none;
+    text-decoration: underline 2px hsla(0, 0%, 0%, 0.25);
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
 }
 
 e-ingles details[open] div {
     background-color: var(--text-color);
     color: var(--background-color);
     font-size: 0.875em;
-    left: 0;
     padding: 0.5ch;
-    position: absolute;
-    right: 0;
     text-align: center;
-    top: calc(100% - var(--_border-thickness));
 }
